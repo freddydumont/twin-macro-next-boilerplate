@@ -15,4 +15,4 @@ module.exports = {
     'babel-plugin-twin',
     'babel-plugin-macros',
   ],
-}
+};
