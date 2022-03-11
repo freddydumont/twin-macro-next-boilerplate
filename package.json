@@ -4,10 +4,14 @@
       "preset": "emotion"
     }
   },
+  "prettier": {
+    "singleQuote": true
+  },
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@emotion/css": "^11.5.0",
