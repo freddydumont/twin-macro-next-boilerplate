@@ -1,5 +1,3 @@
-import 'twin.macro'
-
 const Logo = () => (
   <a
     // Use the tw prop to add tailwind styles directly on jsx elements
