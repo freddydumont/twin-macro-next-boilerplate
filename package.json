@@ -13,7 +13,9 @@
     "start": "next start",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "lint": "next lint --max-warnings 0"
+    "lint": "next lint --max-warnings 0",
+    "storybook": "start-storybook -p 6006",
+    "storybook:build": "build-storybook"
   },
   "dependencies": {
     "@emotion/css": "^11.7.1",
@@ -29,6 +31,12 @@
     "@babel/preset-react": "^7.16.7",
     "@babel/preset-typescript": "^7.16.7",
     "@emotion/babel-plugin": "^11.7.2",
+    "@storybook/addon-actions": "^6.5.0-alpha.48",
+    "@storybook/addon-essentials": "^6.5.0-alpha.48",
+    "@storybook/addon-interactions": "^6.5.0-alpha.48",
+    "@storybook/addon-links": "^6.5.0-alpha.48",
+    "@storybook/react": "^6.5.0-alpha.48",
+    "@storybook/testing-library": "^0.0.9",
     "@types/node": "^17.0.21",
     "@types/react": "^17.0.40",
     "babel-loader": "^8.2.3",
@@ -36,6 +44,7 @@
     "babel-plugin-twin": "^1.0.2",
     "eslint": "8.10.0",
     "eslint-config-next": "12.1.0",
+    "eslint-plugin-storybook": "^0.5.7",
     "prettier": "^2.5.1",
     "tailwindcss": "^2.2.19",
     "twin.macro": "^2.8.2",
