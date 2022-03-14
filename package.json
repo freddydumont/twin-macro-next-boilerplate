@@ -31,6 +31,7 @@
     "@babel/preset-react": "^7.16.7",
     "@babel/preset-typescript": "^7.16.7",
     "@emotion/babel-plugin": "^11.7.2",
+    "@storybook/addon-a11y": "^6.5.0-alpha.48",
     "@storybook/addon-actions": "^6.5.0-alpha.48",
     "@storybook/addon-essentials": "^6.5.0-alpha.48",
     "@storybook/addon-interactions": "^6.5.0-alpha.48",
