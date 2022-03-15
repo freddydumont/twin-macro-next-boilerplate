@@ -1,5 +1,8 @@
+import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 import tw from 'twin.macro';
+import placeholder from './assets/placeholder.png';
 import { Header } from './Header';
 
 type User = {
@@ -21,7 +24,7 @@ export const Page: React.VFC = () => {
       <section
         tw="text-gray-700 text-sm leading-6 py-12 px-5 my-0 mx-auto max-w-xl"
         css={{
-          h2: tw`inline-block mb-1 text-3xl font-extrabold leading-none align-top`,
+          h2: tw`inline-block mb-4 text-3xl font-extrabold leading-none align-top`,
           p: tw`mx-0 my-4`,
           a: tw`no-underline text-[#1ea7fd]`,
           ul: tw`pl-8 mx-0 my-4`,
@@ -29,6 +32,12 @@ export const Page: React.VFC = () => {
         }}
       >
         <h2>Pages in Storybook</h2>
+
+        <Image src={placeholder} alt="placeholder" />
+        <Link href="/my-link">
+          <a>This is a Next.js link</a>
+        </Link>
+
         <p tw="my-4">
           We recommend building UIs with a{' '}
           <a
@@ -48,7 +57,7 @@ export const Page: React.VFC = () => {
         <ul>
           <li>
             Use a higher-level connected component. Storybook helps you compose
-            such data from the "args" of child component stories
+            such data from the &quot;args&quot; of child component stories
           </li>
           <li>
             Assemble data in the page component from your services. You can mock
