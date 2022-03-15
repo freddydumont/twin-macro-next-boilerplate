@@ -1,4 +1,3 @@
-import React from 'react';
 import tw from 'twin.macro';
 
 interface ButtonProps {
@@ -26,8 +25,8 @@ interface ButtonProps {
 
 const SIZES = {
   small: tw`text-xs py-2.5 px-4`,
-  medium: tw`text-sm py-3 px-5`,
-  large: tw`text-base py-3 px-6`,
+  medium: tw`px-5 py-3 text-sm`,
+  large: tw`px-6 py-3 text-base`,
 };
 
 const COLORS = {
