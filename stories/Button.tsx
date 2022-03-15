@@ -1,5 +1,5 @@
 import React from 'react';
-import './button.css';
+import tw from 'twin.macro';
 
 interface ButtonProps {
   /**
@@ -24,6 +24,17 @@ interface ButtonProps {
   onClick?: () => void;
 }
 
+const SIZES = {
+  small: tw`text-xs py-2.5 px-4`,
+  medium: tw`text-sm py-3 px-5`,
+  large: tw`text-base py-3 px-6`,
+};
+
+const COLORS = {
+  primary: tw`text-white bg-[#1ea7fd]`,
+  secondary: tw`text-gray-700 bg-transparent shadow-[rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset]`,
+};
+
 /**
  * Primary UI component for user interaction
  */
@@ -34,15 +45,14 @@ export const Button = ({
   label,
   ...props
 }: ButtonProps) => {
-  const mode = primary
-    ? 'storybook-button--primary'
-    : 'storybook-button--secondary';
   return (
     <button
       type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(
-        ' '
-      )}
+      css={[
+        tw`font-bold border-0 rounded-[3em] cursor-pointer inline-block leading-none`,
+        primary ? COLORS.primary : COLORS.secondary,
+        SIZES[size],
+      ]}
       style={{ backgroundColor }}
       {...props}
     >

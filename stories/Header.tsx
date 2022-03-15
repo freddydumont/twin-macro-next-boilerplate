@@ -1,7 +1,5 @@
 import React from 'react';
-
 import { Button } from './Button';
-import './header.css';
 
 type User = {
   name: string;
@@ -21,9 +19,10 @@ export const Header = ({
   onCreateAccount,
 }: HeaderProps) => (
   <header>
-    <div className="wrapper">
+    <div tw="border-b border-b-[rgba(0, 0, 0, 0.1)] py-3.5 px-5 flex items-center justify-between">
       <div>
         <svg
+          tw="inline-block align-top"
           width="32"
           height="32"
           viewBox="0 0 32 32"
@@ -44,19 +43,21 @@ export const Header = ({
             />
           </g>
         </svg>
-        <h1>Acme</h1>
+        <h1 tw="font-extrabold text-xl leading-none inline-block align-top my-1.5 ml-2.5">
+          Acme
+        </h1>
       </div>
       <div>
         {user ? (
           <>
-            <span className="welcome">
+            <span tw="text-gray-700 text-sm mr-2.5">
               Welcome, <b>{user.name}</b>!
             </span>
             <Button size="small" onClick={onLogout} label="Log out" />
           </>
         ) : (
           <>
-            <Button size="small" onClick={onLogin} label="Log in" />
+            <Button tw="mr-2.5" size="small" onClick={onLogin} label="Log in" />
             <Button
               primary
               size="small"
