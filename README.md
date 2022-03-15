@@ -1,4 +1,10 @@
-# Next + Emotion + TypeScript
+# twin-macro-next-boilerplate
+
+## Known issues
+
+- `mdx` files aren't loaded in storybook
+
+## twin.macro (Next + Emotion + TypeScript)
 
 Download this example using [degit](https://github.com/Rich-Harris/degit):
 
@@ -8,14 +14,14 @@ npx degit https://github.com/ben-rogerson/twin.examples/next-emotion-typescript 
 
 Installation instructions coming soon...
 
-## Customization
+### Customization
 
 - [View the config options →](https://github.com/ben-rogerson/twin.macro/blob/master/docs/options.md)
 - [Customizing the tailwind config →](https://github.com/ben-rogerson/twin.macro/blob/master/docs/customizing-config.md)
 
 [](#next-steps)
 
-## Next steps
+### Next steps
 
 Learn how to work with twin
 
