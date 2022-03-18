@@ -6,6 +6,7 @@
 .pnp.js
 
 # testing
+tsconfig.tsbuildinfo
 /coverage
 
 # next.js
