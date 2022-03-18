@@ -1,10 +1,46 @@
 # twin-macro-next-boilerplate
 
-## Known issues
+Bleeding-edge frontend template featuring:
 
-- `mdx` files aren't loaded in storybook
+- TypeScript
+- Next.js
+- `twin.macro`
+- Storybook (with interaction testing and test runner)
 
-## twin.macro (Next + Emotion + TypeScript)
+This template relies on Storybook for both building and testing components.
+
+## Testing
+
+### Storybook interaction testing
+
+Write [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) tests directly in Storybook using the `play` function:
+
+```typescript
+LoggedIn.play = async ({ canvasElement }) => {
+  const canvas = within(canvasElement);
+
+  const loginButton = await canvas.getByRole('button', { name: /Log in/i });
+  await userEvent.click(loginButton);
+
+  const welcome = await canvas.findByText(/welcome/i);
+  await expect(welcome).toBeInTheDocument();
+};
+```
+
+See [`Page.stories.tsx`](src/stories/Page.stories.tsx).
+
+Run your tests:
+
+```shell
+yarn test:sb
+```
+
+Learn more about testing with Storybook:
+
+- [Interaction testing](https://storybook.js.org/docs/react/essentials/interactions)
+- [Test runner](https://github.com/storybookjs/test-runner)
+
+## `twin.macro` template documentation
 
 Download this example using [degit](https://github.com/Rich-Harris/degit):
 
