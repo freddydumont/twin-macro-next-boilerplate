@@ -15,5 +15,8 @@ module.exports = {
     '@storybook/addon-a11y',
     'storybook-addon-next',
   ],
+  features: {
+    interactionsDebugger: true,
+  },
   framework: '@storybook/react',
 };
