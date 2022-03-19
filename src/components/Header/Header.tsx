@@ -1,4 +1,4 @@
-import { Button } from './Button';
+import Button from '../Button';
 
 type User = {
   name: string;
@@ -11,12 +11,7 @@ interface HeaderProps {
   onCreateAccount: () => void;
 }
 
-export const Header = ({
-  user,
-  onLogin,
-  onLogout,
-  onCreateAccount,
-}: HeaderProps) => (
+const Header = ({ user, onLogin, onLogout, onCreateAccount }: HeaderProps) => (
   <header>
     <div tw="border-b border-b-[rgba(0, 0, 0, 0.1)] py-3.5 px-5 flex items-center justify-between">
       <div>
@@ -69,3 +64,5 @@ export const Header = ({
     </div>
   </header>
 );
+
+export default Header;

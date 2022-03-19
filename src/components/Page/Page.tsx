@@ -2,14 +2,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import tw from 'twin.macro';
-import placeholder from './assets/placeholder.png';
-import { Header } from './Header';
+import placeholder from '../../assets/placeholder.png';
+import Header from '../Header';
 
 type User = {
   name: string;
 };
 
-export const Page: React.VFC = () => {
+const Page: React.VFC = () => {
   const [user, setUser] = React.useState<User>();
 
   return (
@@ -109,3 +109,5 @@ export const Page: React.VFC = () => {
     </article>
   );
 };
+
+export default Page;

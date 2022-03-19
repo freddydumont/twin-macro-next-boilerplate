@@ -1,35 +1,63 @@
-import tw, { styled, css, theme } from 'twin.macro';
+import tw from 'twin.macro';
 
 interface ButtonProps {
-  variant?: 'primary' | 'secondary';
-  isSmall?: boolean;
+  /**
+   * Is this the principal call to action on the page?
+   */
+  primary?: boolean;
+  /**
+   * What background color to use
+   */
+  backgroundColor?: string;
+  /**
+   * How large should the button be?
+   */
+  size?: 'small' | 'medium' | 'large';
+  /**
+   * Button contents
+   */
+  label: string;
+  /**
+   * Optional click handler
+   */
+  onClick?: () => void;
 }
 
-const Button = styled.button(({ variant, isSmall }: ButtonProps) => [
-  // The common button styles added with the tw import
-  tw`px-8 py-2 rounded focus:outline-none transform duration-75`,
+const SIZES = {
+  small: tw`text-xs py-2.5 px-4`,
+  medium: tw`px-5 py-3 text-sm`,
+  large: tw`px-6 py-3 text-base`,
+};
 
-  // Use the variant grouping feature to add variants to multiple classes
-  tw`hocus:(scale-105 text-yellow-400)`,
+const COLORS = {
+  primary: tw`text-white bg-[#1ea7fd]`,
+  secondary: tw`text-gray-700 bg-transparent shadow-[rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset]`,
+};
 
-  // Use props to conditionally style your components
-  variant === 'primary' && tw`bg-black text-white border-black`,
-
-  // Combine regular css with tailwind classes within backticks
-  variant === 'secondary' && [
-    css`
-      box-shadow: 0 0.1em 0 0 rgba(0, 0, 0, 0.25);
-    `,
-    tw`border-2 border-yellow-600`,
-  ],
-
-  // Conditional props can be used
-  isSmall ? tw`text-sm` : tw`text-lg`,
-
-  // The theme import can supply values from your tailwind.config.js
-  css`
-    color: ${theme`colors.white`};
-  `,
-]);
+/**
+ * Primary UI component for user interaction
+ */
+const Button = ({
+  primary = false,
+  size = 'medium',
+  backgroundColor,
+  label,
+  ...props
+}: ButtonProps) => {
+  return (
+    <button
+      type="button"
+      css={[
+        tw`font-bold border-0 rounded-[3em] cursor-pointer inline-block leading-none`,
+        primary ? COLORS.primary : COLORS.secondary,
+        SIZES[size],
+      ]}
+      style={{ backgroundColor }}
+      {...props}
+    >
+      {label}
+    </button>
+  );
+};
 
 export default Button;
