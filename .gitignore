@@ -5,9 +5,13 @@
 /.pnp
 .pnp.js
 
-# testing
+# typescript
 tsconfig.tsbuildinfo
+
+# testing
 /coverage
+/cypress/screenshots
+/cypress/videos
 
 # next.js
 /.next/
