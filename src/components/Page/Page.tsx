@@ -34,8 +34,8 @@ const Page: React.VFC = () => {
         <h2>Pages in Storybook</h2>
 
         <Image src={placeholder} alt="placeholder" />
-        <Link href="/my-link">
-          <a>This is a Next.js link</a>
+        <Link href="/page-2">
+          <a>Go to page 2</a>
         </Link>
 
         <p tw="my-4">
