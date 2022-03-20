@@ -3,43 +3,28 @@ name: CI
 on: [push]
 
 jobs:
-  setup:
+  test:
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
           node-version: '16.x'
+
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
-  format:
-    needs: setup
-    runs-on: ubuntu-latest
-    steps:
       - name: Format
         run: yarn format:check
 
-  typecheck:
-    needs: setup
-    runs-on: ubuntu-latest
-    steps:
       - name: Type check
         run: yarn typecheck
 
-  lint:
-    needs: setup
-    runs-on: ubuntu-latest
-    steps:
       - name: Lint
         run: yarn lint
 
-  # https://github.com/storybookjs/test-runner#2-running-against-locally-built-storybooks-in-ci
-  storybook-test:
-    needs: setup
-    timeout-minutes: 60
-    runs-on: ubuntu-latest
-    steps:
+      # https://github.com/storybookjs/test-runner#2-running-against-locally-built-storybooks-in-ci
       - name: Run Storybook tests
         run: yarn storybook:ci
 
