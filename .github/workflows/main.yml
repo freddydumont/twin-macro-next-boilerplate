@@ -1,14 +1,19 @@
 name: Test with Jest and Cypress
 on: [push]
 jobs:
-  # yarn-test:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - name: Install modules
-  #       run: yarn --frozen-lockfile
-  #     - name: Run tests
-  #       run: yarn test
+  # https://github.com/storybookjs/test-runner#2-running-against-locally-built-storybooks-in-ci
+  storybook-test:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16.x'
+      - name: Install dependencies
+        run: yarn
+      - name: Run Storybook tests
+        run: yarn storybook:ci
 
   cypress-run:
     runs-on: ubuntu-latest
@@ -19,7 +24,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          build: yarn run build
+          build: yarn build
           start: yarn start
           wait-on: 'http://localhost:3000'
 
