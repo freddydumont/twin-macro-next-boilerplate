@@ -6,6 +6,7 @@ Bleeding-edge frontend template featuring:
 - Next.js
 - `twin.macro`
 - Storybook (with interaction testing and test runner)
+- Cypress
 
 This template relies on Storybook for both building and testing components.
 
@@ -27,12 +28,12 @@ LoggedIn.play = async ({ canvasElement }) => {
 };
 ```
 
-See [`Page.stories.tsx`](src/stories/Page.stories.tsx).
+See [`Page.stories.tsx`](src/components/Page/Page.stories.tsx).
 
 Run your tests:
 
 ```shell
-yarn test:sb
+yarn storybook:test
 ```
 
 Learn more about testing with Storybook:
