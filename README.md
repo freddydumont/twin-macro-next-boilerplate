@@ -10,6 +10,16 @@ Bleeding-edge frontend template featuring:
 
 This template relies on Storybook for both building and testing components.
 
+## Component generator
+
+This template includes a component generator to avoid boilerplate and to standardize the folder structure.
+
+```shell
+yarn g MyComponent
+```
+
+Run `yarn g --help` for more info.
+
 ## Testing
 
 ### Storybook interaction testing
