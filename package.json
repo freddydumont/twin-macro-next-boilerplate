@@ -4,13 +4,11 @@
       "preset": "emotion"
     }
   },
-  "prettier": {
-    "singleQuote": true
-  },
   "scripts": {
     "dev": "next",
     "build": "next build",
     "start": "next start",
+    "g": "new-component",
     "typecheck": "tsc --noEmit",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
@@ -36,6 +34,7 @@
     "@babel/preset-react": "^7.16.7",
     "@babel/preset-typescript": "^7.16.7",
     "@emotion/babel-plugin": "^11.7.2",
+    "@freddydumont/new-component": "^1.0.1",
     "@storybook/addon-a11y": "^6.5.0-alpha.48",
     "@storybook/addon-actions": "^6.5.0-alpha.48",
     "@storybook/addon-essentials": "^6.5.0-alpha.48",
